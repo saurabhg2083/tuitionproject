@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dicey Tech - Tuition Challenge Project</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -33,63 +35,85 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <h1>Dicey Tech - Predicting Student Responses </h1>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">                    
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Predicting Student Responses</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="{{ url_for('index') }}">About Project</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ url_for('part1') }}">Part 1</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ url_for('part2') }}">Part 2</a>
-                        </li>
-                      </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('index') }}">About Project</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('part1') }}">Part 1</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ url_for('part2') }}">Part 2</a>
+                            </li>
+                        </ul>
+                        
                     </div>
-                  </nav>
+                </nav>
             </div>
         </div>
 
-
-
         <br />
-
         <div class="row">
             <div class="col-sm-12">
                 <h3>About the Project Aim: </h3>
-    <p>Accurately predict which answers the students will choose  <br/>Part 1: To predict whether the student will get an answer right or wrong <br/>Part 2: To predict the exact option the student will choose in a test</p>
-    <h4>Some factors to consider:</h4>
+                <p>Accurately predict which answers the students will choose <br />Part 1: To predict whether the
+                    student will get an answer right or wrong <br />Part 2: To predict the exact option the student will
+                    choose in a test</p>
+                <h4>Some factors to consider:</h4>
 
-    <h4>Student's Age and Time of Completion</h4>
-    <p>There is a huge difference between students who have just turned 10 and those who have been 10 for nearly a year. It's important to consider the student's age in detail as there can be substantial differences in knowledge based on a student’s age. Exams are generally standardised by how old a student is in terms of year and month.</p>
+                <h4>Student's Age and Time of Completion</h4>
+                <p>There is a huge difference between students who have just turned 10 and those who have been 10 for
+                    nearly a year. It's important to consider the student's age in detail as there can be substantial
+                    differences in knowledge based on a student’s age. Exams are generally standardised by how old a
+                    student is in terms of year and month.</p>
 
-        <p>As the children age, it is also to consider their progress through the two years. It may be useful to see if you can calculate or predict their rate of improvement.</p>
+                <p>As the children age, it is also to consider their progress through the two years. It may be useful to
+                    see if you can calculate or predict their rate of improvement.</p>
 
-    <h4>Student's Skills</h4>
-    <p>Students may have different skill sets. You can consider analysing students by literary skills, such as vocabulary, punctuation, knowledge of idioms etc.</p>
+                <h4>Student's Skills</h4>
+                <p>Students may have different skill sets. You can consider analysing students by literary skills, such
+                    as vocabulary, punctuation, knowledge of idioms etc.</p>
 
-    <h4>Question Topic</h4>
-    <p>This is quite similar to assessing the student's skills but more so their application of them. The majority of questions have been labelled with their topic. You can consider analysing a student's comprehensive ability in terms of factual recall, inference, SPaG (spelling, punctuation and grammar), vocabulary, purpose etc.</p>
+                <h4>Question Topic</h4>
+                <p>This is quite similar to assessing the student's skills but more so their application of them. The
+                    majority of questions have been labelled with their topic. You can consider analysing a student's
+                    comprehensive ability in terms of factual recall, inference, SPaG (spelling, punctuation and
+                    grammar), vocabulary, purpose etc.</p>
 
-    <h4>Difficulty of Question</h4>
-    <p>You can also consider the difficulty of each question. There are easier factual recall questions and harder factual recall questions. You can consider calculating each question's Difficulty Index and Discrimination Index.</p>
+                <h4>Difficulty of Question</h4>
+                <p>You can also consider the difficulty of each question. There are easier factual recall questions and
+                    harder factual recall questions. You can consider calculating each question's Difficulty Index and
+                    Discrimination Index.</p>
 
-    <h4>Text</h4>
-    <p>You may consider the genre of the text (Fiction, Non-Fiction, Poetry etc), length of the text, the complexity of the text (vocabulary, sentence structures), and time in which it was written. All of these factors influence a student's ability to comprehend the text. Just because they know all the words in a passage does not necessarily mean they understand what is happening. Some metrics that may be useful include the Lexile score of a text, or its ATOS level etc.</p>
+                <h4>Text</h4>
+                <p>You may consider the genre of the text (Fiction, Non-Fiction, Poetry etc), length of the text, the
+                    complexity of the text (vocabulary, sentence structures), and time in which it was written. All of
+                    these factors influence a student's ability to comprehend the text. Just because they know all the
+                    words in a passage does not necessarily mean they understand what is happening. Some metrics that
+                    may be useful include the Lexile score of a text, or its ATOS level etc.</p>
 
-    <h4>Worksheet vs Mock Exam</h4>
-    <p>Students will generally perform worse under timed conditions so it is important to differentiate between whether the student has completed the work under timed conditions or not. Some texts such as Jane Eyre and Dorian Gray have been assessed under both conditions so it may be worth comparing the performance of the two.</p>
-    
-    <p>Worksheet data is completed at home.<br/>
-    Mock exam data is completed in timed conditions.</p>
+                <h4>Worksheet vs Mock Exam</h4>
+                <p>Students will generally perform worse under timed conditions so it is important to differentiate
+                    between whether the student has completed the work under timed conditions or not. Some texts such as
+                    Jane Eyre and Dorian Gray have been assessed under both conditions so it may be worth comparing the
+                    performance of the two.</p>
 
-    <h4>Children</h4>
+                <p>Worksheet data is completed at home.<br />
+                    Mock exam data is completed in timed conditions.</p>
 
-    <p>The students are children between 8-11. Depending on their engagement levels at the time of completion, they may not put in their full effort or concentration when completing their homework.</p>
-    
-                
+                <h4>Children</h4>
+
+                <p>The students are children between 8-11. Depending on their engagement levels at the time of
+                    completion, they may not put in their full effort or concentration when completing their homework.
+                </p>
+
+
             </div>
         </div>
     </div>
@@ -178,7 +202,7 @@
                         'grade': $('#grade').val(),
                         'hour': $('#hour').val()
                     },
-                    cache: false,                    
+                    cache: false,
                     success: function (data) {
                         $('#lblpredict').text(data);
                     },
