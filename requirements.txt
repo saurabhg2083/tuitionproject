@@ -1,0 +1,6 @@
+urllib3==1.26.16
+requests
+Flask
+numpy
+pandas
+-e .
