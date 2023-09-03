@@ -117,7 +117,7 @@ def predictpart1():
     response = requests.post(url, json=data,headers=headers)
     jsonData = response.json()  
 
-    if jsonData['Prediction'] == 1:
+    if jsonData['Prediction'] == "1":
         return "Will respond well" + "<br/><br/>Prompt sent to model: " + prompt +"<br/><br/> Raw Result"+ json.dumps(jsonData)
     else:
         return "Will fail" + "<br/><br/> Prompt sent to model: " + prompt +"<br/><br/> Raw Result"+ json.dumps(jsonData)
